@@ -24,11 +24,16 @@ const readInput = document.getElementById('readInput')
 function Book(title, author, pages, read, id) {
     // the constructor
     this.title = title;
-    this.author = 'by ' + author;
+    this.author = ' by ' + author;
     this.pages = pages + ' pages';
     this.read = read;
-    this.id = crypto.randomUUID();
+    this.id = crypto.randomUUID();  
+    this.showBook = function() {
+        return this.title + "" + this.author + this.pages + this.read
+    }
+    
 };
+
 
 function storeToLibrary(title, author, pages, read) {
 
@@ -43,19 +48,14 @@ function storeToLibrary(title, author, pages, read) {
 
 };
 
-storeToLibrary(theHobbit, myLibrary)
-storeToLibrary(invincible, myLibrary)
-storeToLibrary(jjk, myLibrary)
-
-console.log(myLibrary)
 
 function displayBooks () {
-    myLibrary.forEach(book =>  {
-        console.log(book)
+    myLibrary.forEach((book) => {
+        let bookSpace = document.createElement('div')
+        bookSpace.innerText = book.showBook()
+        display.appendChild(bookSpace)
     })
 }
-
-displayBooks(myLibrary)
 
 
 const add = document.createElement('button')

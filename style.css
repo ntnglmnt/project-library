@@ -8,5 +8,5 @@ height: 10vh;
 width: 100vh;
 background-color: aquamarine;
 display: flex;
-flex-direction: row;
+flex-direction: column;
 }
