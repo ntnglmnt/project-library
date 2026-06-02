@@ -3,6 +3,16 @@ let theHobbit = new Book('The Hobbit', 'JJR Tolkien', '295', 'read');
 let invincible = new Book('INVINCIBLE', 'Mark Nolan', '359', 'not read');
 let jjk = new Book('Jujutsu Kaisen', 'Hito Nakamura', '209', 'read')
 
+const display = document.createElement('div')
+display.classList.add('display')
+document.body.appendChild(display);
+
+const displayBtn = document.createElement('button')
+displayBtn.classList.add('displayBtn')
+displayBtn.textContent = 'Display'
+displayBtn.addEventListener('click', displayBooks)
+display.appendChild(displayBtn)
+
 const titleInput = document.getElementById('titleInput')
 
 const authorInput = document.getElementById('authorInput')
