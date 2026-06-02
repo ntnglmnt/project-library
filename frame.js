@@ -13,17 +13,22 @@ function Book(title, author, pages, read, id) {
     this.id = crypto.randomUUID();
 };
 
-
-
 function storeToLibrary(book, arr) {
 
     arr.push(book)
-    
-};
 
+};
 
 storeToLibrary(theHobbit, myLibrary)
 storeToLibrary(invincible, myLibrary)
 storeToLibrary(jjk, myLibrary)
 
 console.log(myLibrary)
+
+function displayBooks () {
+    myLibrary.forEach(book =>  {
+        console.log(book)
+    })
+}
+
+displayBooks(myLibrary)
