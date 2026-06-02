@@ -32,3 +32,7 @@ function displayBooks () {
 }
 
 displayBooks(myLibrary)
+
+const add = document.createElement('button')
+add.textContent = 'Add'
+document.body.appendChild(add)
