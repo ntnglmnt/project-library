@@ -1,4 +1,8 @@
 const myLibrary = [];
+let theHobbit = new Book('The Hobbit', 'JJR Tolkien', '295', 'read');
+let invincible = new Book('INVINCIBLE', 'Mark Nolan', '359', 'not read');
+let jjk = new Book('Jujutsu Kaisen', 'Hito Nakamura', '209', 'read')
+
 
 function Book(title, author, pages, read, id) {
     // the constructor
@@ -9,7 +13,7 @@ function Book(title, author, pages, read, id) {
     this.id = crypto.randomUUID();
 };
 
-let theHobbit = new Book('The Hobbit', 'JJR Tolkien', '295', 'read');
+
 
 function storeToLibrary(book, arr) {
 
@@ -19,4 +23,7 @@ function storeToLibrary(book, arr) {
 
 
 storeToLibrary(theHobbit, myLibrary)
+storeToLibrary(invincible, myLibrary)
+storeToLibrary(jjk, myLibrary)
+
 console.log(myLibrary)
