@@ -3,6 +3,13 @@ let theHobbit = new Book('The Hobbit', 'JJR Tolkien', '295', 'read');
 let invincible = new Book('INVINCIBLE', 'Mark Nolan', '359', 'not read');
 let jjk = new Book('Jujutsu Kaisen', 'Hito Nakamura', '209', 'read')
 
+const titleInput = document.getElementById('titleInput')
+
+const authorInput = document.getElementById('authorInput')
+
+const pagesInput = document.getElementById('pagesInput')
+
+const readInput = document.getElementById('readInput')
 
 function Book(title, author, pages, read, id) {
     // the constructor
@@ -13,9 +20,16 @@ function Book(title, author, pages, read, id) {
     this.id = crypto.randomUUID();
 };
 
-function storeToLibrary(book, arr) {
+function storeToLibrary(title, author, pages, read) {
 
-    arr.push(book)
+    title = titleInput.value
+    author = authorInput.value
+    pages = pagesInput.value
+    read = readInput.value
+
+    let newBook = new Book(title, author, pages, read)
+    console.log(newBook)
+    myLibrary.push(newBook)
 
 };
 
@@ -33,6 +47,9 @@ function displayBooks () {
 
 displayBooks(myLibrary)
 
+
 const add = document.createElement('button')
 add.textContent = 'Add'
+add.addEventListener('click', storeToLibrary)
 document.body.appendChild(add)
+
