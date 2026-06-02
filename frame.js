@@ -1,16 +1,22 @@
 const myLibrary = [];
 
-function Book(arr) {
+function Book(title, author, pages, read, id) {
     // the constructor
-
-    this.title = arr[0];
-    this.author = arr[1];
-    this.pages = arr[2];
-    this.read = arr[3];
+    this.title = title;
+    this.author = 'by ' + author;
+    this.pages = pages + ' pages';
+    this.read = read;
     this.id = crypto.randomUUID();
 };
 
-function storeToLibrary(title, author, pages, read, array) {
-    // take params, create a book and then store it in the array
+let theHobbit = new Book('The Hobbit', 'JJR Tolkien', '295', 'read');
+
+function storeToLibrary(book, arr) {
+
+    arr.push(book)
     
 };
+
+
+storeToLibrary(theHobbit, myLibrary)
+console.log(myLibrary)
