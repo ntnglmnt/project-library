@@ -54,6 +54,14 @@ function displayBooks () {
         let bookSpace = document.createElement('div')
         bookSpace.innerText = book.showBook()
         display.appendChild(bookSpace)
+        let removeBookSpace = document.createElement('button')
+        removeBookSpace.classList.add('removeBookSpaceBtn')
+        removeBookSpace.textContent = 'Remove'
+        removeBookSpace.addEventListener('click', () => {
+            bookSpace.innerText = ''
+            display.removeChild(removeBookSpace)
+        })
+        display.appendChild(removeBookSpace)
     })
 }
 

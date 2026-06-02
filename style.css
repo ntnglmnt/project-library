@@ -8,5 +8,9 @@ height: 10vh;
 width: 100vh;
 background-color: aquamarine;
 display: flex;
-flex-direction: column;
+}
+
+.removeBookSpaceBtn {
+    width: 100px;
+    height: 20px;
 }
