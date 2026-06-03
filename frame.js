@@ -1,7 +1,7 @@
 const myLibrary = [];
 let theHobbit = new Book('The Hobbit', 'JJR Tolkien', '295', 'read');
 let invincible = new Book('INVINCIBLE', 'Mark Nolan', '359', 'not read');
-let jjk = new Book('Jujutsu Kaisen', 'Hito Nakamura', '209', 'read')
+let jjk = new Book('Jujutsu Kaisen', 'Hito Nakamura', '209', 'read');
 
 const display = document.createElement('div')
 display.classList.add('display')
@@ -25,15 +25,14 @@ function Book(title, author, pages, read, id) {
     // the constructor
     this.title = title;
     this.author = ' by ' + author;
-    this.pages = pages + ' pages';
-    this.read = read;
+    this.pages = ',' + pages + ' pages ';
+    this.read = '' + read;
     this.id = crypto.randomUUID();  
     this.showBook = function() {
-        return this.title + "" + this.author + this.pages + this.read
+        return this.title + this.author + this.pages + this.read
     }
     
 };
-
 
 function storeToLibrary(title, author, pages, read) {
 
@@ -61,8 +60,31 @@ function displayBooks () {
             bookSpace.innerText = ''
             display.removeChild(removeBookSpace)
         })
-        display.appendChild(removeBookSpace)
+        bookSpace.appendChild(removeBookSpace)
+        let toggleRead = document.createElement('button')
+        toggleRead.classList.add('checkBtn')
+        toggleRead.textContent = 'Read'
+        toggleRead.addEventListener('click', () => {
+            book.read = 'read'
+            bookSpace.innerText = book.showBook()
+            bookSpace.appendChild(removeBookSpace)
+            bookSpace.appendChild(toggleRead)
+            bookSpace.appendChild(toggleNotRead)
+        })
+        bookSpace.appendChild(toggleRead)
+        let toggleNotRead = document.createElement('button')
+        toggleNotRead.classList.add('checkBtn')
+        toggleNotRead.textContent = 'not read'
+        toggleNotRead.addEventListener('click', () => {
+            book.read = 'Not read'
+            console.log(book)
+            bookSpace.innerText = book.showBook()
+            bookSpace.appendChild(removeBookSpace)
+            bookSpace.appendChild(toggleRead)
+            bookSpace.appendChild(toggleNotRead)
     })
+        bookSpace.appendChild(toggleNotRead)
+    }) 
 }
 
 

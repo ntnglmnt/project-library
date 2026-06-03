@@ -8,9 +8,21 @@ height: 10vh;
 width: 100vh;
 background-color: aquamarine;
 display: flex;
+flex-direction: column;
+}
+.displayBtn {
+    width: 40vw;
 }
 
+.bookSpace {
+display: flex;
+}
+
+.toggleBtn {
+    width: 68px;
+    height: 20px;
+}
 .removeBookSpaceBtn {
-    width: 100px;
+    width: 68px;
     height: 20px;
 }
